@@ -31,7 +31,7 @@ We want to determine the best hyperparameters for our final model. We want to ge
 
 ## Fairness Analysis
 
-To test the fairness of our final model, we evaluate on the year of the submission time of the recipe. The evaluation metric we used here is accuracy. We have divided our data into two groups according to year, the old recipe (2008-2013), and the new recipe (2014-2018). We noticed that the model's accuracy was slightly higher for the old recipes, so we run a permutation test to see if the difference in accuracy is significant.
+To test the fairness of our final model, we evaluate on the year of the submission time of the recipe. The evaluation metric we used here is accuracy，since F1 score we learned so far was used to binary classification. According to our confusion model, the false positive and false negative are about equally bad. Since there is not inbalance here, we choose accuracy over f1-score. We have divided our data into two groups according to year, the old recipe (2008-2013), and the new recipe (2014-2018). We noticed that the model's accuracy was slightly higher for the old recipes, so we run a permutation test to see if the difference in accuracy is significant.
 
 - Null Hypothesis: Our classifier's accuracy is the same for both new recipe and old recipe, and any differences are due to chance.
 - Alternative Hypothesis: The classifier's accuracy is higher for old recipe.
