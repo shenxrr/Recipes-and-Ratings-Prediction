@@ -7,17 +7,17 @@ Our exploratory data analysis on this dataset can be found [here](https://shenxr
 
 Our predition preblem is to **predict the cooking time(minutes) of the receipes using classification**. 
 
-We used a multiclass classification to classify cooking time(response variable) into three categories: 0-30 mins, 30-60 mins, 60+ mins. We decided to use cooking time as our response variable because the purpose of our project is to investigate the relationship of healthiness and cooking time of a recipes, and classifying cooking time into three categories gives us an idea of how long it takes for the recipe to be cooked. We use features such as nutritions(calories, protein, sugar,etc), n_steps, n_ingredients, to predict the cooking time of a recipe. The metric we used to evaluate our model is accuracy, because it measures the proportion of correctly classified cases in the dataset. At the time of prediction, we would have all the information we mentioned before as features to predict cooking time. 
+We used a multiclass classification to classify cooking time(response variable) into three categories: 0-30 mins, 30-60 mins, 60+ mins. We decided to use cooking time as our response variable because the purpose of our project is to investigate the relationship of healthiness and cooking time of a recipe, and classifying cooking time into three categories gives us an idea of how long it takes for the recipe to be cooked. We use features such as nutritions(calories, protein, sugar,etc), n_steps, n_ingredients, to predict the cooking time of a recipe. The metric we used to evaluate our model is accuracy, because it measures the proportion of correctly classified cases in the dataset. At the time of prediction, we would have all the information we mentioned before as features to predict cooking time. 
 
 ## Baseline Model
 
-Since our model is used to predict cooking time into three categories: 0-30 mins, 30-60 mins, 60+ mins, we used the following features in our baseline model:
+We use the Decision Tree Classifier to perform muliclass classification on the cooking time. Since our model is used to predict cooking time into three categories: 0-30 mins, 30-60 mins, 60+ mins, we used the following features in our baseline model:
 
   1) n_ingredients: a quantative variable that contains the information of how many ingredients are needed for the recipe. We have standard scale this variable in our model to ensure the accuracy of the model. We used this feature in our baseline model because the cooking time can be affected by the time it takes to process the ingredients. If a recipe has more ingredients, it tends to have a longer cooking time.
   
   2) calories: a quantative variable that contains the calories in the recipes. We have binarized it according to our interpretation of calories in a recipe. We used a threshold of 400 as we believe a recipe of 400 calories or higher are considered high in calories.
 
-We use the Decision Tree Classifier to perform muliclass classification on the cooking time. We used train-test split on our data set. The current baseline model has an accuracy around 0.45 for both the training set and the testing set, which is a reasonable model but still needs some further improvements. In our final model, we plan to include more features and hyperparameters to improve model performance.
+We used train-test split on our data set. The current baseline model has an accuracy around 0.45 for both the training set and the testing set, which is a reasonable model but still needs some further improvements. In our final model, we plan to include more features and hyperparameters to improve model performance.
 
 ## Final Model
 
@@ -39,3 +39,4 @@ To test the fairness of our final model, we evaluate on the year of the submissi
 - Significance level: 0.05.
 
 After running 1000 permutation, we arrive at the p-value of 0.001. Since our p-value 0.001 > 0.05, we reject the null hypothesis that our classifier's accuracy is the same for both new recipe and old recipe.
+
